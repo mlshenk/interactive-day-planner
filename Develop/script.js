@@ -41,15 +41,15 @@ for (i = 9; i <= 17 ; i++) {
         // }  
     });
     var populateTaskList = function (){
-        $("#9h").val(localStorage.getItem("9") || "hello there");
-        $("#10h").val(localStorage.getItem("10") || "hello there");
-        $("#11h").val(localStorage.getItem("11") || "hello there");
-        $("#12h").val(localStorage.getItem("12") || "hello there");
-        $("#13h").val(localStorage.getItem("1") || "hello there");
-        $("#14h").val(localStorage.getItem("2") || "hello there");
-        $("#15h").val(localStorage.getItem("3") || "hello there");
-        $("#16h").val(localStorage.getItem("4") || "hello there");
-        $("#17h").val(localStorage.getItem("5") || "hello there");
+        $("#9h").val(localStorage.getItem("9") || []);
+        $("#10h").val(localStorage.getItem("10") || []);
+        $("#11h").val(localStorage.getItem("11") || []);
+        $("#12h").val(localStorage.getItem("12") || []);
+        $("#13h").val(localStorage.getItem("1") || []);
+        $("#14h").val(localStorage.getItem("2") || []);
+        $("#15h").val(localStorage.getItem("3") || []);
+        $("#16h").val(localStorage.getItem("4") || []);
+        $("#17h").val(localStorage.getItem("5") || []);
     }
     populateTaskList();
     console.log(storageArray);
