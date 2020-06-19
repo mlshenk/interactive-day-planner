@@ -24,7 +24,7 @@ for (i = 9; i <= 17 ; i++) {
     if(currentHour24Time < z) {
         $("#" + z + "h").addClass("future");
     } else if (currentHour24Time > z) {
-    $("#" + z + "h").addClass("past");
+        $("#" + z + "h").addClass("past");
     } else {
         $("#" + z + "h").addClass("present");
     }
@@ -33,10 +33,24 @@ for (i = 9; i <= 17 ; i++) {
     
     var storageArray = JSON.parse(localStorage.getItem("user-input")) || [];
     $("button").click(function() {
-        for (let i = 0; i < 9; i++) {
-            storageArray.push($("textarea")[i].value); //how do we do this so we don't push back into the array (since I'm not trying to save old data??)
-        }
-        localStorage.setItem("user-input", JSON.stringify(storageArray));
-    })
+        storageArray.push($(this).attr("id")); //how do we do this so we don't push back into the array (since I'm not trying to save old data??)
+        localStorage.setItem($(this).attr("id"), $(this).prev().val());
+        // for (let i = 0; i < 9; i++) {
+            // console.log(`#${i+9}h`);
+            // $(`#${i+9}h`).val(storageArray[i])
+        // }  
+    });
+    var populateTaskList = function (){
+        $("#9h").val(localStorage.getItem("9") || "hello there");
+        $("#10h").val(localStorage.getItem("10") || "hello there");
+        $("#11h").val(localStorage.getItem("11") || "hello there");
+        $("#12h").val(localStorage.getItem("12") || "hello there");
+        $("#13h").val(localStorage.getItem("1") || "hello there");
+        $("#14h").val(localStorage.getItem("2") || "hello there");
+        $("#15h").val(localStorage.getItem("3") || "hello there");
+        $("#16h").val(localStorage.getItem("4") || "hello there");
+        $("#17h").val(localStorage.getItem("5") || "hello there");
+    }
+    populateTaskList();
     console.log(storageArray);
  
