@@ -1,6 +1,6 @@
 var currentHour24Time = parseInt(moment().format("HH"))
 console.log(parseInt(moment().format("HH")))
-// var currentHour24Time = 15;  <-- this will test the clock to ensure it works
+// var currentHour24Time = 20; //this will test the clock to ensure it works
 var currentDate = moment().format("dddd, MMMM Do, YYYY <br><br> hh:mm a");
 $("#currentDay").append(currentDate)
 
@@ -33,12 +33,9 @@ for (i = 9; i <= 17 ; i++) {
     
     var storageArray = JSON.parse(localStorage.getItem("user-input")) || [];
     $("button").click(function() {
-        storageArray.push($(this).attr("id")); //how do we do this so we don't push back into the array (since I'm not trying to save old data??)
+        storageArray.push($(this).attr("id")); 
         localStorage.setItem($(this).attr("id"), $(this).prev().val());
-        // for (let i = 0; i < 9; i++) {
-            // console.log(`#${i+9}h`);
-            // $(`#${i+9}h`).val(storageArray[i])
-        // }  
+      
     });
     var populateTaskList = function (){
         $("#9h").val(localStorage.getItem("9") || []);
